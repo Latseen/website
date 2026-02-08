@@ -1,0 +1,6 @@
+---
+alwaysApply: true
+---
+
+docker build -t website .
+docker run -p 8000:8000 website

@@ -1,6 +1,6 @@
-# Website
+# ML/Data Engineer Portfolio
 
-A minimal Python web app served by [Gunicorn](https://gunicorn.org/) and packaged in Docker.
+A developer portfolio site for an ML/Data Engineer who works at startups. Built with Flask and Gunicorn, packaged in Docker.
 
 ## Run with Docker
 
@@ -20,7 +20,12 @@ pip install -r requirements.txt
 gunicorn app:app --bind 0.0.0.0:8000
 ```
 
+## Customize
+
+- **Content**: Edit `templates/index.html` — hero, about, experience (Startup Alpha/Beta/Gamma), skills, projects, and contact (email, GitHub, LinkedIn).
+- **Styling**: Edit `static/css/style.css` — colors (e.g. `--accent`), typography, and layout.
+
 ## Endpoints
 
-- `GET /` — Home page
+- `GET /` — Portfolio home
 - `GET /health` — Health check (JSON)

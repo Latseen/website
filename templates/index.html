@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chet Russell</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <main>
+    <header class="intro">
+      <h1 class="name">Chet Russell</h1>
+      <p class="role">ML/Data Engineer at <a href="https://www.marinebiologics.com/" target="_blank" rel="noopener">Marine Biologics</a></p>
+      <p class="handle"><a href="https://github.com/Latseen" target="_blank" rel="noopener">@Latseen</a></p>
+      <p class="tagline"><em>Building data systems.</em> Pipelines, models, and ML infra for startups. In the past I’ve shipped production feature stores and training pipelines at early-stage companies.</p>
+    </header>
+
+    <section class="block">
+      <h2 class="block-title">Building</h2>
+      <div class="block-item">
+        <span class="block-item-name">ML platform</span>
+        <p class="block-item-desc">End-to-end infra for training, evaluation, and deployment.</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="block-title">Projects</h2>
+      <div class="block-list">
+        <div class="block-list-item">
+          <span class="block-item-name">Feature store</span>
+          <p class="block-item-desc">Low-latency feature API for ranking models, Redis + batch backfills.</p>
+        </div>
+        <div class="block-list-item">
+          <span class="block-item-name">Training pipeline</span>
+          <p class="block-item-desc">Distributed training and hyperparameter sweeps on spot instances.</p>
+        </div>
+        <div class="block-list-item">
+          <span class="block-item-name">Analytics stack</span>
+          <p class="block-item-desc">dbt models and star schemas for product and growth metrics.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2 class="block-title">Now</h2>
+      <p class="block-prose">Developing skill through doing—clean data, reproducible experiments, systems that scale with the team. Mindful that <em>reliable infra is someone’s life work.</em> When I’m not in the repo I’m reading papers, contributing to OSS, or debugging something in the cloud at 2am.</p>
+    </section>
+
+    <section class="block">
+      <h2 class="block-title">Connect</h2>
+      <p class="block-prose">Reach me at <a href="mailto:crusse2015@gmail.com">crusse2015@gmail.com</a> or <a href="https://github.com/Latseen" target="_blank" rel="noopener">GitHub</a>, <a href="https://www.linkedin.com/in/chet-russ/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+    </section>
+
+    <footer class="footer">
+      <p>© {{ current_year }}</p>
+    </footer>
+  </main>
+</body>
+</html>

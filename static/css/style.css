@@ -1,0 +1,177 @@
+/* Paco-style minimal portfolio — light, typography-first */
+:root {
+  --bg: #fafafa;
+  --text: #171717;
+  --text-muted: #525252;
+  --border: #e5e5e5;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: var(--text-muted);
+}
+
+/* Main column */
+main {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+}
+
+/* Intro */
+.intro {
+  margin-bottom: 4rem;
+}
+
+.name {
+  font-family: var(--font-mono);
+  font-size: clamp(2.25rem, 6vw, 3rem);
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.role {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin: 0 0 0.25rem;
+  line-height: 1.5;
+}
+
+.role a {
+  color: var(--text);
+}
+
+.handle {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  margin: 0 0 1.25rem;
+  line-height: 1.5;
+}
+
+.handle a {
+  color: var(--text-muted);
+}
+
+.handle a:hover {
+  color: var(--text);
+}
+
+.tagline {
+  font-size: 1.0625rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.7;
+}
+
+.tagline em {
+  font-style: italic;
+  color: var(--text);
+}
+
+/* Block sections (Building, Projects, Now, Connect) */
+.block {
+  margin-bottom: 3.5rem;
+}
+
+.block-title {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+  margin: 0 0 1.25rem;
+}
+
+.block-item,
+.block-list-item {
+  margin-bottom: 1.5rem;
+}
+
+.block-list-item:last-child {
+  margin-bottom: 0;
+}
+
+.block-item-name {
+  font-weight: 500;
+  color: var(--text);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.block-item-desc {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.block-prose {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.75;
+}
+
+.block-prose em {
+  font-style: italic;
+  color: var(--text);
+}
+
+.block-prose a {
+  color: var(--text);
+}
+
+/* Footer */
+.footer {
+  padding-top: 3rem;
+  border-top: 1px solid var(--border);
+}
+
+.footer p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  main {
+    padding: 3rem 1.25rem 4rem;
+  }
+
+  .intro {
+    margin-bottom: 3rem;
+  }
+
+  .block {
+    margin-bottom: 2.5rem;
+  }
+}

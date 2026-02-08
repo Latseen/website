@@ -1,12 +1,16 @@
-"""Minimal Flask app for Gunicorn."""
-from flask import Flask
+"""Portfolio site for ML/Data Engineer — Flask + Gunicorn."""
+from datetime import datetime
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 
 @app.route("/")
 def index():
-    return "<!DOCTYPE html><html><head><title>Website</title></head><body><h1>Hey baby bear :)</h1><p>Running in Docker.</p></body></html>"
+    return render_template(
+        "index.html",
+        current_year=datetime.utcnow().year,
+    )
 
 
 @app.route("/health")
