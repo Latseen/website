@@ -8,3 +8,5 @@ __pycache__
 venv
 *.md
 .dockerignore
+!content/**/*.md
+build

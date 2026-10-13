@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chet Russell</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-  <main>
+{% extends "base.html" %}
+{% block content %}
     <header class="intro">
-      <h1 class="name">Chet Russell</h1>
-      <p class="role">Backend Engineer - AI Infra at <a href="https://www.arbol.io" target="_blank" rel="noopener">Arbol</a></p>
-      <p class="handle"><a href="https://github.com/Latseen" target="_blank" rel="noopener">@Latseen</a></p>
-      <p class="tagline">Building data systems. Pipelines, models, and ML infra for startups. In the past I've shipped feature stores and training pipelines at early-stage companies.</p>
+      <h1 class="name">Chet Russell <a class="name-handle" href="https://github.com/Latseen" target="_blank" rel="noopener">@Latseen</a></h1>
+      <p class="tagline">I build pipelines, models, and AI infra at <a href="https://www.arbol.io" target="_blank" rel="noopener">Arbol</a>.</p>
     </header>
 
     <section class="block">
@@ -36,19 +23,30 @@
       </div>
     </section>
 
+    {% if notes %}
+    <section class="block">
+      <h2 class="block-title">Notes</h2>
+      <ul class="note-list">
+        {% for n in notes %}
+        <li>
+          {% if n.date %}<time datetime="{{ n.date.isoformat() }}">{{ n.date.strftime("%Y-%m-%d") }}</time>{% endif %}
+          <a href="{{ url_for('note', slug=n.slug) }}">{{ n.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      <p class="block-more"><a href="{{ url_for('notes') }}">all notes &rarr;</a></p>
+    </section>
+    {% endif %}
+
+    {# Now section tabled for now; restore by removing this comment wrapper.
     <section class="block">
       <h2 class="block-title">Now</h2>
-      <p class="block-prose">Developing skill through reproducible experiments and systems that scale with the team. Passionate about the environment and sustainability. When I'm not in the repo I'm playing <a href="https://www.youtube.com/watch?v=cPW8g5axlq8" target="_blank" rel="noopener">classical guitar</a>, or <a href="https://www.youtube.com/watch?v=j8BWUpctZX4" target="_blank" rel="noopener">picking at someones wrist</a>.</p>
+      <p class="block-prose">Working on reproducible experiments and infra that scales with the team. I care about the environment, and outside of work I play <a href="https://www.youtube.com/watch?v=cPW8g5axlq8" target="_blank" rel="noopener">classical guitar</a>.</p>
     </section>
+    #}
 
     <section class="block">
       <h2 class="block-title">Connect</h2>
       <p class="block-prose">Reach me at <a href="mailto:crusse2015@gmail.com">crusse2015@gmail.com</a> or <a href="https://github.com/Latseen" target="_blank" rel="noopener">GitHub</a>, <a href="https://www.linkedin.com/in/chet-russ/" target="_blank" rel="noopener">LinkedIn</a>.</p>
     </section>
-
-    <footer class="footer">
-      <p>@ Chet Russell {{ current_year }}</p>
-    </footer>
-  </main>
-</body>
-</html>
+{% endblock %}

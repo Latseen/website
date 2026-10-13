@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Notes · Chet Russell{% endblock %}
+{% block description %}Notes from Chet Russell on data systems, ML infrastructure, and whatever else.{% endblock %}
+{% block content %}
+    <header class="intro intro-sub">
+      <p class="block-more"><a href="{{ url_for('index') }}">&larr; home</a></p>
+      <h1 class="name">Notes</h1>
+      <p class="tagline">Short writing on data systems, ML infra, and whatever else.</p>
+    </header>
+
+    <section class="block">
+      {% if notes %}
+      <ul class="note-list">
+        {% for n in notes %}
+        <li>
+          {% if n.date %}<time datetime="{{ n.date.isoformat() }}">{{ n.date.strftime("%Y-%m-%d") }}</time>{% endif %}
+          <a href="{{ url_for('note', slug=n.slug) }}">{{ n.title }}</a>
+          {% if n.summary %}<p class="block-item-desc">{{ n.summary }}</p>{% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p class="block-prose">Nothing here yet. Soon.</p>
+      {% endif %}
+    </section>
+{% endblock %}

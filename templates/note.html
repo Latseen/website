@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ note.title }} · Chet Russell{% endblock %}
+{% block description %}{{ note.summary or site_description }}{% endblock %}
+{% block content %}
+    <article>
+      <header class="intro intro-sub">
+        <p class="block-more"><a href="{{ url_for('notes') }}">&larr; notes</a></p>
+        <h1 class="name name-note">{{ note.title }}</h1>
+        {% if note.date %}<time class="handle" datetime="{{ note.date.isoformat() }}">{{ note.date.strftime("%B %-d, %Y") }}</time>{% endif %}
+      </header>
+      <div class="prose">
+        {{ note.html | safe }}
+      </div>
+    </article>
+{% endblock %}
